@@ -1,0 +1,10 @@
+typing_extensions
+zipp
+importlib_metadata
+click
+itsdangerous
+dataclasses
+Werkzeug
+MarkupSafe
+Jinja2
+Flask

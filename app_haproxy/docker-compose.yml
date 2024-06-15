@@ -1,0 +1,20 @@
+services:
+  haproxy:
+    image: eeacms/haproxy
+    depends_on:
+    - webapp
+    ports:
+    - "5000:4000"
+    - "8080:1936"
+    environment:
+      BACKENDS: "webapp"
+      FRONTEND_PORT: "4000"
+      BACKENDS_PORT: "6000"
+      DNS_ENABLED: "true"
+      LOG_LEVEL: "info"
+  webapp:
+    image: localhost/app_vt121170:1.0
+    build: 
+      context: ../vt121170_app
+    deploy:
+      replicas: 3
